@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.peace-07.com',
+  site: 'https://peace-craft.pages.dev',
   build: {
     format: 'directory',
   },

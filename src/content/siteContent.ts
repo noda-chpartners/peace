@@ -4,7 +4,7 @@ export const siteContent = {
     title: 'PEACE｜高円寺のハンドメイドシルバージュエリー',
     description:
       '高円寺・新高円寺駅から徒歩5分。ハンドメイドのシルバージュエリーとレザー小物を扱うPEACEの公式サイトです。',
-    canonicalUrl: 'https://www.peace-07.com/',
+    canonicalUrl: 'https://peace-craft.pages.dev/',
     ogImage: '/ogp.png',
   },
   navigation: [
