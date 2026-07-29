@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/hero-store.jpg';
+import { siteContent } from '../content/siteContent';
+---
+
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero__media" data-hero-media>
+    <Image
+      class="hero__image site-image"
+      src={heroImage}
+      alt="夜のPEACE店舗外観"
+      widths={[640, 960, 1280, 1920]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
+  <div class="hero__shade"></div>
+
+  <div class="hero__content">
+    <p class="hero__eyebrow" data-hero-item>{siteContent.hero.eyebrow}</p>
+    <h1 class="hero__title" id="hero-title" aria-label="PEACE">
+      <span class="hero__title-line" data-hero-title>{siteContent.hero.title}</span>
+    </h1>
+    <div class="hero__meta" data-hero-item>
+      <p class="hero__location">{siteContent.hero.location}</p>
+      <p class="hero__statement">{siteContent.hero.statement}</p>
+    </div>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true">
+    <span class="hero__scroll-label">SCROLL</span>
+    <span class="hero__scroll-line"></span>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import jewelryDetail from '../assets/images/jewelry-detail.jpg';
+import SectionHeading from './SectionHeading.astro';
+import { siteContent } from '../content/siteContent';
+---
+
+<section class="concept section" id="concept" aria-labelledby="concept-title">
+  <div class="concept__ghost" aria-hidden="true">ORIGIN</div>
+  <div class="concept__inner container">
+    <div class="concept__heading" id="concept-title">
+      <SectionHeading
+        eyebrow={siteContent.concept.eyebrow}
+        titleLines={siteContent.concept.titleLines}
+      />
+    </div>
+
+    <figure class="concept__visual" data-reveal>
+      <Image
+        class="concept__image site-image"
+        src={jewelryDetail}
+        alt="木のテーブルに並ぶPEACEのシルバージュエリー"
+        widths={[480, 720, 960]}
+        sizes="(max-width: 767px) 84vw, 38vw"
+      />
+      <figcaption class="concept__caption">SILVER / HANDCRAFT / KOENJI</figcaption>
+    </figure>
+
+    <div class="concept__copy" data-reveal>
+      <p class="concept__lead">{siteContent.concept.peace}</p>
+      <p class="concept__body">{siteContent.concept.philosophy}</p>
+      <p class="concept__source">{siteContent.concept.sourceLabel}</p>
+    </div>
+  </div>
+</section>

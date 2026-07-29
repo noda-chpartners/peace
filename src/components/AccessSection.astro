@@ -1,0 +1,66 @@
+---
+import { siteContent } from '../content/siteContent';
+---
+
+<section class="access section" id="access" aria-labelledby="access-title">
+  <div class="access__inner container">
+    <div class="access__heading" data-reveal>
+      <p class="access__eyebrow">{siteContent.shop.eyebrow}</p>
+      <h2 class="access__title" id="access-title">{siteContent.shop.title}</h2>
+    </div>
+
+    <div class="access__details" data-reveal>
+      <dl class="access__list">
+        <div class="access__row">
+          <dt class="access__term">ADDRESS</dt>
+          <dd class="access__description">
+            <span class="access__address">{siteContent.shop.address}</span>
+            <span class="access__sub">{siteContent.shop.access}</span>
+          </dd>
+        </div>
+        <div class="access__row">
+          <dt class="access__term">OPEN</dt>
+          <dd class="access__description">
+            {
+              siteContent.shop.hours.map((hour) => (
+                <span class="access__hours">
+                  <span class="access__hours-label">{hour.label}</span>
+                  <span class="access__hours-value">{hour.value}</span>
+                </span>
+              ))
+            }
+            <span class="access__sub">{siteContent.shop.notice}</span>
+          </dd>
+        </div>
+        <div class="access__row">
+          <dt class="access__term">TEL</dt>
+          <dd class="access__description">
+            <a class="access__phone site-link" href={`tel:${siteContent.shop.telephone}`}>
+              {siteContent.shop.telephoneDisplay}
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <a
+        class="access__map-link site-link"
+        href={siteContent.shop.mapHref}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="access__map-label">GOOGLE MAPを開く</span>
+        <span class="access__map-arrow" aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div class="access__map" data-reveal>
+      <iframe
+        class="access__map-frame"
+        src={siteContent.shop.mapEmbed}
+        title="PEACE 所在地"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>

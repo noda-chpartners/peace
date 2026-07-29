@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+import craftHammer from '../assets/images/craft-hammer.jpg';
+import craftSilver from '../assets/images/craft-silver.jpg';
+import craftTools from '../assets/images/craft-tools.jpg';
+import SectionHeading from './SectionHeading.astro';
+import { siteContent } from '../content/siteContent';
+---
+
+<section class="craft section" id="craft" aria-labelledby="craft-title">
+  <div class="craft__inner container">
+    <div class="craft__heading" id="craft-title">
+      <SectionHeading
+        eyebrow={siteContent.craft.eyebrow}
+        titleLines={siteContent.craft.titleLines}
+        theme="dark"
+      />
+    </div>
+
+    <div class="craft__gallery">
+      <figure class="craft__figure craft__figure--large" data-reveal>
+        <Image
+          class="craft__image site-image"
+          src={craftHammer}
+          alt="銀板とハンマーが置かれたPEACEの作業台"
+          widths={[640, 960, 1280]}
+          sizes="(max-width: 767px) 90vw, 54vw"
+        />
+      </figure>
+      <figure class="craft__figure craft__figure--small" data-reveal>
+        <Image
+          class="craft__image site-image"
+          src={craftSilver}
+          alt="加工途中の銀素材"
+          widths={[360, 600, 800]}
+          sizes="(max-width: 767px) 56vw, 27vw"
+        />
+      </figure>
+      <figure class="craft__figure craft__figure--detail" data-reveal>
+        <Image
+          class="craft__image site-image"
+          src={craftTools}
+          alt="PEACEで使われているジュエリー製作道具"
+          widths={[360, 600, 800]}
+          sizes="(max-width: 767px) 56vw, 24vw"
+        />
+      </figure>
+    </div>
+
+    <div class="craft__copy" data-reveal>
+      <p class="craft__body">{siteContent.craft.body}</p>
+      <p class="craft__note">{siteContent.craft.note}</p>
+    </div>
+  </div>
+</section>

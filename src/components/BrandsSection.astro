@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import toolsImage from '../assets/images/bench-tools.jpg';
+import { siteContent } from '../content/siteContent';
+---
+
+<section class="brands section" id="brands" aria-labelledby="brands-title">
+  <div class="brands__header container" data-reveal>
+    <p class="brands__eyebrow">SELECTED BRANDS</p>
+    <h2 class="brands__title" id="brands-title">取り扱いブランド</h2>
+  </div>
+
+  <div class="brands__list">
+    {
+      siteContent.brands.map((brand, index) => (
+        <div class="brands__row" data-reveal>
+          <span class="brands__number">{String(index + 1).padStart(2, '0')}</span>
+          <p class="brands__name">{brand.name}</p>
+          {brand.detail && <p class="brands__detail">{brand.detail}</p>}
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="wing-rock container">
+    <figure class="wing-rock__visual" data-reveal>
+      <Image
+        class="wing-rock__image site-image"
+        src={toolsImage}
+        alt="ジュエリー製作に使う工具"
+        widths={[640, 960, 1280]}
+        sizes="(max-width: 767px) 92vw, 48vw"
+      />
+    </figure>
+    <div class="wing-rock__copy" data-reveal>
+      <p class="wing-rock__eyebrow">{siteContent.wingRock.eyebrow}</p>
+      <h3 class="wing-rock__title">{siteContent.wingRock.title}</h3>
+      <p class="wing-rock__body">{siteContent.wingRock.body}</p>
+      <p class="wing-rock__source">{siteContent.wingRock.sourceLabel}</p>
+    </div>
+  </div>
+</section>

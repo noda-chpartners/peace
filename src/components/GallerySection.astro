@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+import interior from '../assets/images/interior-window.jpg';
+import workbench from '../assets/images/workbench.jpg';
+import peaceSign from '../assets/images/peace-sign.jpg';
+import cactus from '../assets/images/cactus.jpg';
+import rollingMill from '../assets/images/rolling-mill.jpg';
+import storefront from '../assets/images/storefront.jpg';
+import { siteContent } from '../content/siteContent';
+
+const galleryImages = [
+  {
+    src: interior,
+    alt: 'PEACEの店内',
+    className: 'gallery__item gallery__item--wide',
+  },
+  {
+    src: workbench,
+    alt: '工具が置かれた作業台',
+    className: 'gallery__item gallery__item--portrait',
+  },
+  {
+    src: peaceSign,
+    alt: '木製のPEACE案内看板',
+    className: 'gallery__item gallery__item--square',
+  },
+  {
+    src: cactus,
+    alt: '店内のサボテンとラグ',
+    className: 'gallery__item gallery__item--square',
+  },
+  {
+    src: rollingMill,
+    alt: 'ジュエリー製作用ローリングミル',
+    className: 'gallery__item gallery__item--portrait',
+  },
+  {
+    src: storefront,
+    alt: 'PEACE店舗入口',
+    className: 'gallery__item gallery__item--wide',
+  },
+];
+---
+
+<section class="gallery section" id="gallery" aria-labelledby="gallery-title">
+  <div class="gallery__header container" data-reveal>
+    <p class="gallery__eyebrow">{siteContent.gallery.eyebrow}</p>
+    <h2 class="gallery__title" id="gallery-title">{siteContent.gallery.title}</h2>
+  </div>
+  <div class="gallery__grid container">
+    {
+      galleryImages.map((item) => (
+        <figure class={item.className} data-reveal>
+          <Image
+            class="gallery__image site-image"
+            src={item.src}
+            alt={item.alt}
+            widths={[360, 640, 900]}
+            sizes="(max-width: 767px) 92vw, 44vw"
+          />
+        </figure>
+      ))
+    }
+  </div>
+</section>

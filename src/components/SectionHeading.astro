@@ -1,0 +1,16 @@
+---
+interface Props {
+  eyebrow: string;
+  titleLines: readonly string[];
+  theme?: 'light' | 'dark';
+}
+
+const { eyebrow, titleLines, theme = 'light' } = Astro.props;
+---
+
+<div class:list={['section-heading', `section-heading--${theme}`]} data-reveal>
+  <p class="section-heading__eyebrow">{eyebrow}</p>
+  <h2 class="section-heading__title">
+    {titleLines.map((line) => <span class="section-heading__line">{line}</span>)}
+  </h2>
+</div>

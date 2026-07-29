@@ -1,0 +1,74 @@
+---
+import { siteContent } from '../content/siteContent';
+import '../styles/global.css';
+import '../styles/main.scss';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = siteContent.site.title,
+  description = siteContent.site.description,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, siteContent.site.canonicalUrl);
+const ogImage = new URL(siteContent.site.ogImage, siteContent.site.canonicalUrl);
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'JewelryStore',
+  name: siteContent.site.name,
+  url: siteContent.site.canonicalUrl,
+  image: ogImage.toString(),
+  telephone: '+81-3-3315-3833',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '高円寺南3丁目22-2',
+    addressLocality: '杉並区',
+    addressRegion: '東京都',
+    addressCountry: 'JP',
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '11:00',
+      closes: '19:00',
+    },
+  ],
+  sameAs: siteContent.social.map((item) => item.href),
+};
+---
+
+<!doctype html>
+<html class="site-root" lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#11100e" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="robots" content="index, follow" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:site_name" content={siteContent.site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="PEACE" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body class="site-body">
+    <slot />
+  </body>
+</html>

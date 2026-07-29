@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/images/peace-logo.jpg';
+import BrandIcon from './BrandIcon.astro';
+import { siteContent } from '../content/siteContent';
+---
+
+<footer class="footer">
+  <div class="footer__top container">
+    <a class="footer__brand site-link" href="#top" aria-label="ページ先頭へ">
+      <Image
+        class="footer__logo site-image"
+        src={logo}
+        alt="PEACE"
+        width={181}
+        height={68}
+      />
+    </a>
+    <p class="footer__message">
+      <span class="footer__message-line">SILVER, CRAFT,</span>
+      <span class="footer__message-line">AND CONNECTION.</span>
+    </p>
+  </div>
+
+  <div class="footer__bottom container">
+    <div class="footer__social">
+      {
+        siteContent.social.map((item) => (
+          <a
+            class="footer__social-link site-link"
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${item.name}を開く`}
+          >
+            <BrandIcon name={item.icon} class="footer__social-icon" />
+            <span class="footer__social-label">{item.name}</span>
+          </a>
+        ))
+      }
+    </div>
+    <p class="footer__copyright">{siteContent.footer.copyright}</p>
+  </div>
+</footer>

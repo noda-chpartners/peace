@@ -1,0 +1,21 @@
+---
+import { siInstagram, siX } from 'simple-icons';
+import type { SocialIconName } from '../content/siteContent';
+
+interface Props {
+  name: SocialIconName;
+  class?: string;
+}
+
+const { name, class: className = '' } = Astro.props;
+const icon = name === 'instagram' ? siInstagram : siX;
+---
+
+<svg
+  class:list={['brand-icon', className]}
+  viewBox="0 0 24 24"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path class="brand-icon__path" d={icon.path}></path>
+</svg>

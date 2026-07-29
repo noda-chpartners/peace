@@ -1,0 +1,93 @@
+:root {
+  --color-ink: #11100e;
+  --color-ink-soft: #292723;
+  --color-paper: #ece8df;
+  --color-paper-bright: #f8f5ed;
+  --color-silver: #b8b7b2;
+  --color-line: rgba(17, 16, 14, 0.2);
+  --color-line-light: rgba(248, 245, 237, 0.24);
+  --font-sans: "Helvetica Neue", "Arial Nova", Arial, "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-serif: "Iowan Old Style", "Times New Roman", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --page-gutter: clamp(1.25rem, 4.2vw, 4.5rem);
+  --content-width: 90rem;
+  --header-height: 5.25rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.site-root {
+  background: var(--color-ink);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  scroll-behavior: auto;
+}
+
+.site-body {
+  min-width: 20rem;
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.site-body.is-menu-open {
+  overflow: hidden;
+}
+
+.site-shell {
+  min-width: 0;
+  overflow: clip;
+}
+
+.site-main {
+  min-width: 0;
+}
+
+.site-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-link:focus-visible,
+.menu-button:focus-visible {
+  outline: 0.125rem solid currentColor;
+  outline-offset: 0.25rem;
+}
+
+.site-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: min(100% - (var(--page-gutter) * 2), var(--content-width));
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+}
+
+.brand-icon {
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+
+.brand-icon__path {
+  fill: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-root {
+    scroll-behavior: auto;
+  }
+}

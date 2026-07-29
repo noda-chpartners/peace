@@ -1,0 +1,33 @@
+---
+import AccessSection from '../components/AccessSection.astro';
+import BrandsSection from '../components/BrandsSection.astro';
+import ConceptSection from '../components/ConceptSection.astro';
+import CraftSection from '../components/CraftSection.astro';
+import Footer from '../components/Footer.astro';
+import GallerySection from '../components/GallerySection.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import OnlineShopSection from '../components/OnlineShopSection.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <div class="site-shell">
+    <Header />
+    <main class="site-main">
+      <Hero />
+      <ConceptSection />
+      <CraftSection />
+      <BrandsSection />
+      <OnlineShopSection />
+      <GallerySection />
+      <AccessSection />
+    </main>
+    <Footer />
+  </div>
+
+  <script>
+    import '../scripts/navigation';
+    import '../scripts/animations';
+  </script>
+</BaseLayout>
