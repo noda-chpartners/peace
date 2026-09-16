@@ -35,6 +35,7 @@ export const siteContent = {
     body:
       '道具を手に、素材の表情を見ながら、一点ずつ形にしていく。店の奥にある工房で、PEACEのジュエリーは生まれます。',
     note: 'HANDMADE IN KOENJI',
+    filmLabel: 'IN THE WORKSHOP',
   },
   wingRock: {
     eyebrow: 'WING ROCK',
@@ -42,6 +43,12 @@ export const siteContent = {
     body:
       'ナバホ族が神聖な山として崇める実存の岩山“ウイングロック”の名を胸に、独学で身につけたシルバージュエリー製作で作品を作り続ける。',
     sourceLabel: 'WING ROCK OFFICIAL CONCEPT',
+  },
+  pherrows: {
+    eyebrow: "PHERROW'S × PEACE",
+    title: '30th Anniversary コラボリング',
+    body:
+      'Pherrow\'s 30周年を記念した、PEACEとのコラボレーションリング。手仕事のディテールを、映像でもご覧ください。',
   },
   brands: [
     { name: 'PEACE', detail: 'ORIGINAL SILVER JEWELRY' },

@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import craftHammer from '../assets/images/craft-hammer.jpg';
 import craftSilver from '../assets/images/craft-silver.jpg';
 import craftTools from '../assets/images/craft-tools.jpg';
+import craftFilm from '../assets/movies/videoplayback.mp4';
 import SectionHeading from './SectionHeading.astro';
 import { siteContent } from '../content/siteContent';
 ---
@@ -52,4 +53,18 @@ import { siteContent } from '../content/siteContent';
       <p class="craft__note">{siteContent.craft.note}</p>
     </div>
   </div>
+
+  <figure class="craft__film container" data-reveal>
+    <video
+      class="craft__video"
+      src={craftFilm}
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      aria-label="PEACEの工房での作業風景"
+    ></video>
+    <figcaption class="craft__film-label">{siteContent.craft.filmLabel}</figcaption>
+  </figure>
 </section>

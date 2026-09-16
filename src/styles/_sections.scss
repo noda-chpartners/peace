@@ -201,6 +201,27 @@
   letter-spacing: 0.2em;
 }
 
+.craft__film {
+  margin: clamp(4rem, 8vw, 8rem) auto 0;
+}
+
+.craft__video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #000;
+}
+
+.craft__film-label {
+  margin-top: 0.9rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.19em;
+  line-height: 1.4;
+  opacity: 0.72;
+}
+
 .brands {
   padding-block: clamp(7rem, 12vw, 12rem);
   background: var(--color-paper-bright);
@@ -265,6 +286,53 @@
   letter-spacing: 0.16em;
   line-height: 1.5;
   text-align: right;
+}
+
+.pherrows {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.7fr);
+  align-items: center;
+  gap: clamp(3rem, 8vw, 8rem);
+  margin-top: clamp(7rem, 12vw, 12rem);
+}
+
+.pherrows__visual {
+  margin: 0;
+  overflow: hidden;
+}
+
+.pherrows__video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #000;
+}
+
+.pherrows__copy {
+  min-width: 0;
+}
+
+.pherrows__eyebrow {
+  @include eyebrow;
+
+  margin-bottom: 2rem;
+}
+
+.pherrows__title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.65rem, 3.2vw, 3.4rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.35;
+}
+
+.pherrows__body {
+  margin: 2rem 0 0;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  letter-spacing: 0.045em;
+  line-height: 2.1;
 }
 
 .wing-rock {
@@ -615,6 +683,7 @@
 @media (max-width: 67.5rem) {
   .concept__inner,
   .craft__inner,
+  .pherrows,
   .wing-rock {
     column-gap: 3rem;
   }
@@ -667,14 +736,17 @@
     justify-self: end;
   }
 
+  .pherrows,
   .wing-rock {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .pherrows__visual,
   .wing-rock__visual {
     width: min(84%, 42rem);
   }
 
+  .pherrows__copy,
   .wing-rock__copy {
     width: min(100%, 38rem);
     justify-self: end;
@@ -787,12 +859,14 @@
   }
 
   .concept__visual,
+  .pherrows__visual,
   .wing-rock__visual {
     width: 90%;
   }
 
   .concept__copy,
   .craft__copy,
+  .pherrows__copy,
   .wing-rock__copy {
     width: 100%;
   }

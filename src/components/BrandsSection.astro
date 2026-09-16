@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import toolsImage from '../assets/images/bench-tools.jpg';
+import pherrowsFilm from '../assets/movies/pherrows30thaniversary-peacering.mp4';
 import { siteContent } from '../content/siteContent';
 ---
 
@@ -20,6 +21,24 @@ import { siteContent } from '../content/siteContent';
         </div>
       ))
     }
+  </div>
+
+  <div class="pherrows container">
+    <figure class="pherrows__visual" data-reveal>
+      <video
+        class="pherrows__video"
+        src={pherrowsFilm}
+        controls
+        playsinline
+        preload="metadata"
+        aria-label="Pherrow's 30周年 PEACEコラボリング"
+      ></video>
+    </figure>
+    <div class="pherrows__copy" data-reveal>
+      <p class="pherrows__eyebrow">{siteContent.pherrows.eyebrow}</p>
+      <h3 class="pherrows__title">{siteContent.pherrows.title}</h3>
+      <p class="pherrows__body">{siteContent.pherrows.body}</p>
+    </div>
   </div>
 
   <div class="wing-rock container">
