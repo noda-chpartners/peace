@@ -40,7 +40,7 @@ export const siteContent = {
     eyebrow: 'WING ROCK',
     title: 'インディアンジュエリーと、ハンドクラフト。',
     body:
-      'インディアンとシルバージュエリーの出会いから始まり、独学で身につけた製作技術で、ハンドクラフトにこだわった作品を作り続けるブランドです。',
+      'ナバホ族が神聖な山として崇める実存の岩山“ウイングロック”の名を胸に、独学で身につけたシルバージュエリー製作で作品を作り続ける。',
     sourceLabel: 'WING ROCK OFFICIAL CONCEPT',
   },
   brands: [
