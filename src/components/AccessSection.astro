@@ -1,4 +1,5 @@
 ---
+import BrandIcon from './BrandIcon.astro';
 import { siteContent } from '../content/siteContent';
 ---
 
@@ -29,7 +30,7 @@ import { siteContent } from '../content/siteContent';
                 </span>
               ))
             }
-            <span class="access__sub">{siteContent.shop.notice}</span>
+            <span class="access__sub access__notice">{siteContent.shop.notice}</span>
           </dd>
         </div>
         <div class="access__row">
@@ -38,6 +39,27 @@ import { siteContent } from '../content/siteContent';
             <a class="access__phone site-link" href={`tel:${siteContent.shop.telephone}`}>
               {siteContent.shop.telephoneDisplay}
             </a>
+          </dd>
+        </div>
+        <div class="access__row">
+          <dt class="access__term">SNS</dt>
+          <dd class="access__description">
+            <div class="access__social">
+              {
+                siteContent.social.map((item) => (
+                  <a
+                    class="access__social-link site-link"
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${item.name}を開く（新しいタブ）`}
+                  >
+                    <BrandIcon name={item.icon} class="access__social-icon" />
+                    <span class="access__social-label">{item.name}</span>
+                  </a>
+                ))
+              }
+            </div>
           </dd>
         </div>
       </dl>

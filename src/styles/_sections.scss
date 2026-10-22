@@ -629,6 +629,10 @@
   grid-template-columns: 5rem 1fr;
 }
 
+.access__notice {
+  white-space: pre-line;
+}
+
 .access__hours-label {
   color: rgba(17, 16, 14, 0.66);
 }
@@ -639,6 +643,42 @@
   font-size: clamp(1.45rem, 2.4vw, 2.2rem);
   letter-spacing: 0.025em;
   line-height: 1.2;
+}
+
+.access__social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.access__social-link {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 0.7rem 1rem;
+  border: 0.0625rem solid var(--color-line);
+  border-radius: 999rem;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.access__social-link:hover,
+.access__social-link:focus-visible {
+  background: var(--color-ink);
+  color: var(--color-paper-bright);
+}
+
+.access__social-icon {
+  font-size: 0.88rem;
+}
+
+.access__social-label {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
 }
 
 .access__map-link {

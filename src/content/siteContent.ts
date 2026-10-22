@@ -81,7 +81,8 @@ export const siteContent = {
       { label: '土日祝', value: '11:00–19:00' },
       { label: '定休日', value: '水曜日' },
     ],
-    notice: '急な定休はX（旧Twitter）で随時更新します。',
+    notice:
+      '急な定休や時間変更はX（旧Twitter）で随時更新します。\nお客様にご迷惑がかからないようご確認、ご連絡の程ご来店ください。',
     mapHref: 'https://maps.app.goo.gl/9MWvSLcpLtwMbp4e8?g_st=ic',
     mapEmbed:
       'https://www.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%9D%89%E4%B8%A6%E5%8C%BA%E9%AB%98%E5%86%86%E5%AF%BA%E5%8D%973%E4%B8%81%E7%9B%AE22-2&output=embed',
