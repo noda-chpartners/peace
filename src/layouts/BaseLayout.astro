@@ -1,5 +1,6 @@
 ---
 import { siteContent } from '../content/siteContent';
+import FixedShopLink from '../components/FixedShopLink.astro';
 import '../styles/global.css';
 import '../styles/main.scss';
 
@@ -46,7 +47,7 @@ const structuredData = {
 <html class="site-root" lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#11100e" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="robots" content="index, follow" />
@@ -70,5 +71,6 @@ const structuredData = {
   </head>
   <body class="site-body">
     <slot />
+    <FixedShopLink />
   </body>
 </html>
